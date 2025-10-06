@@ -1,0 +1,23 @@
+build:
+  environment:
+    php: '8.3'
+  nodes:
+    analysis:
+      tests:
+        override:
+          - php-cs-fixer-run
+          - phpstan
+          - phpunit-run
+
+checks:
+  php:
+    code_rating: true
+    duplication: true
+
+tools:
+  php-cs-fixer:
+    config_file: '.php-cs-fixer.dist.php'
+  phpstan:
+    config_file: 'phpstan.neon'
+  phpunit:
+    config_file: 'phpunit.xml.dist'
