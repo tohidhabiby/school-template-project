@@ -11,12 +11,12 @@ build:
           - command: 'vendor/bin/phpstan analyse'
             analysis:
               never_exec: true
+          - command: 'vendor/bin/phpunit --coverage-clover=build/logs/clover.xml'
+            coverage:
+              file: 'build/logs/clover.xml'
+              format: 'php-clover'
 
 checks:
   php:
     code_rating: true
     duplication: true
-
-tools:
-  phpunit:
-    config_file: 'phpunit.xml.dist'
