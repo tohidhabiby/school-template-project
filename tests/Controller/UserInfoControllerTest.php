@@ -2,24 +2,27 @@
 
 namespace App\Tests\Controller;
 
-use App\Kernel;
+use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class UserInfoControllerTest extends WebTestCase
 {
-    protected static function createKernel(array $options = []): Kernel
+    private KernelBrowser $client;
+
+    protected function setUp(): void
     {
-        return new Kernel('test', true);
+        parent::setUp();
+        $this->client = static::createClient();
     }
 
     public function testIndex(): void
     {
-        $client = static::createClient();
-        $client->request('GET', '/api/users');
+        $this->client->request('GET', '/api/users');
 
         $this->assertResponseIsSuccessful();
-        $response = $client->getResponse();
+        $response = $this->client->getResponse();
 
         $this->assertNotFalse($response->getContent());
         $this->assertJsonStringEqualsJsonString('[]', $response->getContent());
     }
+}
