@@ -7,13 +7,15 @@
         "php": ">=8.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "doctrine/doctrine-bundle": "^2.16",
-        "doctrine/orm": "^3.5",
+        "doctrine/doctrine-bundle": "^2.16.2",
+        "doctrine/orm": "^3.5.2",
+        "symfony/asset": "7.3.*",
         "symfony/console": "7.3.*",
         "symfony/dotenv": "7.3.*",
-        "symfony/flex": "^2",
+        "symfony/flex": "^2.8.2",
         "symfony/framework-bundle": "7.3.*",
         "symfony/runtime": "7.3.*",
+        "symfony/twig-bundle": "7.3.*",
         "symfony/yaml": "7.3.*"
     },
     "config": {
@@ -68,11 +70,11 @@
         }
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.88",
+        "friendsofphp/php-cs-fixer": "^3.88.2",
         "infection/infection": "^0.31.2",
         "nelmio/api-doc-bundle": "^5.6",
-        "phpstan/phpstan": "^2.1",
-        "phpstan/phpstan-symfony": "^2.0",
+        "phpstan/phpstan": "^2.1.30",
+        "phpstan/phpstan-symfony": "^2.0.8",
         "phpunit/phpunit": "^12.4",
         "symfony/browser-kit": "7.3.*",
         "symfony/css-selector": "7.3.*",
