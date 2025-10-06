@@ -6,11 +6,7 @@ build:
       tests:
         override:
           - command: 'vendor/bin/php-cs-fixer fix --dry-run --diff --stop-on-violation'
-            analysis:
-              never_exec: true
           - command: 'vendor/bin/phpstan analyse'
-            analysis:
-              never_exec: true
           - command: 'vendor/bin/phpunit --coverage-clover=build/logs/clover.xml'
             coverage:
               file: 'build/logs/clover.xml'
