@@ -23,6 +23,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Copy application code
 COPY . .
+RUN if [ ! -f .env.local ]; then cp .env.local.dist .env.local; fi
 
 # Set permissions
 RUN mkdir -p /var/www/html/var && mkdir -p /var/www/html/public
