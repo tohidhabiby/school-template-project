@@ -1,0 +1,24 @@
+language: php
+
+php:
+  - 8.3
+
+services:
+  - docker
+
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+    - $HOME/.npm
+    - vendor
+    - node_modules
+
+before_script:
+  - cp .env.dist .env
+  - docker compose up -d
+  - docker compose exec -T php composer install
+
+script:
+  - docker compose exec -T php vendor/bin/phpunit
+  - docker compose exec -T php vendor/bin/php-cs-fixer fix --dry-run --diff
+  - docker compose exec -T php vendor/bin/phpstan analyse
