@@ -2,10 +2,16 @@
 
 namespace App\Tests\Controller;
 
+use App\Kernel;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class UserInfoControllerTest extends WebTestCase
 {
+    protected static function createKernel(array $options = []): Kernel
+    {
+        return new Kernel('test', true);
+    }
+
     public function testIndex(): void
     {
         $client = static::createClient();
@@ -17,4 +23,3 @@ class UserInfoControllerTest extends WebTestCase
         $this->assertNotFalse($response->getContent());
         $this->assertJsonStringEqualsJsonString('[]', $response->getContent());
     }
-}
