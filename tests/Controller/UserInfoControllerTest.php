@@ -12,6 +12,9 @@ class UserInfoControllerTest extends WebTestCase
         $client->request('GET', '/api/users');
 
         $this->assertResponseIsSuccessful();
-        $this->assertJsonStringEqualsJsonString('[]', $client->getResponse()->getContent());
+        $response = $client->getResponse();
+
+        $this->assertNotFalse($response->getContent());
+        $this->assertJsonStringEqualsJsonString('[]', $response->getContent());
     }
 }
