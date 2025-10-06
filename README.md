@@ -1,4 +1,4 @@
-[![Quality Score](https://img.shields.io/scrutinizer/g/tohidhabiby/school-template-project.svg?style=flat-square)](https://scrutinizer-ci.com/g/tohidhabiby/school-template-project)
+[![Quality Score](https://img.shields.io/scrutinizer/g/tohidhabiby/school-template-project.svg?style=flat-square)](https://scrutinizer-ci.com/g/tohidhabiby/school-template-project) [![Build Status](https://img.shields.io/travis/tohidhabiby/school-template-project/master.svg?style=flat-square)](https://travis-ci.org/tohidhabiby/school-template-project)
 
 # Symfony REST API Microservice Template
 
