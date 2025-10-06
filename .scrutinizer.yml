@@ -5,6 +5,7 @@ build:
     analysis:
       tests:
         override:
+          - php-scrutinizer-run
           - command: 'vendor/bin/php-cs-fixer fix --dry-run --diff --stop-on-violation'
           - command: 'vendor/bin/phpstan analyse'
           - command: 'XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover=build/logs/clover.xml'
