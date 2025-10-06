@@ -5,7 +5,7 @@ up:
 	docker compose up -d
 
 shell:
-	docker compose exec php bash
+	docker compose exec php sh
 
 down:
 	docker compose down
