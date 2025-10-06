@@ -5,9 +5,12 @@ build:
     analysis:
       tests:
         override:
-          - php-cs-fixer-run
-          - phpstan
-          - phpunit-run
+          - command: 'vendor/bin/php-cs-fixer fix --dry-run --diff --stop-on-violation'
+            analysis:
+              never_exec: true
+          - command: 'vendor/bin/phpstan analyse'
+            analysis:
+              never_exec: true
 
 checks:
   php:
@@ -15,9 +18,5 @@ checks:
     duplication: true
 
 tools:
-  php-cs-fixer:
-    config_file: '.php-cs-fixer.dist.php'
-  phpstan:
-    config_file: 'phpstan.neon'
   phpunit:
     config_file: 'phpunit.xml.dist'
