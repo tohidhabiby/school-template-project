@@ -4,7 +4,7 @@ FROM php:8.3-fpm-alpine
 WORKDIR /var/www/html
 
 # Install dependencies
-RUN apk add --no-cache \
+RUN apk update && apk add --no-cache \
     curl \
     libzip-dev \
     zip \
